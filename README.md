@@ -115,7 +115,9 @@ module "collector_kinesis" {
 | <a name="input_byte_limit"></a> [byte\_limit](#input\_byte\_limit) | The amount of bytes to buffer events before pushing them to Kinesis | `number` | `1000000` | no |
 | <a name="input_collector_lb_sg_id"></a> [collector\_lb\_sg\_id](#input\_collector\_lb\_sg\_id) | The ID of the load-balancer security group that sits upstream of the webserver | `string` | n/a | yes |
 | <a name="input_collector_lb_tg_id"></a> [collector\_lb\_tg\_id](#input\_collector\_lb\_tg\_id) | The ID of the load-balancer target group to direct traffic from the load-balancer to the webserver | `string` | n/a | yes |
-| <a name="input_cookie_domain"></a> [cookie\_domain](#input\_cookie\_domain) | Optional first party cookie domain for the collector to set cookies on (e.g. acme.com) | `string` | `""` | no |
+| <a name="cross_domain"></a> [cross\_domain](#input\_cross\_domain) | Optional enable cross domain | `bool` | `false` | no |
+| <a name="input_domains"></a> [domains](#input\_domains) | Optional domains to cross domain and cookie domains | `list(string)` | `[]` | no |
+| <a name="input_fallback_cookie_domain"></a> [fallback\_cookie\_domain](#input\_fallback\_cookie\_domain) | Optional first party cookie domain for the collector to set cookies on (e.g. acme.com) | `string` | `""` | no |
 | <a name="input_good_stream_name"></a> [good\_stream\_name](#input\_good\_stream\_name) | The name of the good kinesis stream that the collector will insert data into | `string` | n/a | yes |
 | <a name="input_iam_permissions_boundary"></a> [iam\_permissions\_boundary](#input\_iam\_permissions\_boundary) | The permissions boundary ARN to set on IAM roles created | `string` | `""` | no |
 | <a name="input_ingress_port"></a> [ingress\_port](#input\_ingress\_port) | The port that the collector will be bound to and expose over HTTP | `number` | n/a | yes |
