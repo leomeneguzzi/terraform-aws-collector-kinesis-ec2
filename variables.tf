@@ -93,7 +93,19 @@ variable "bad_stream_name" {
   type        = string
 }
 
-variable "cookie_domain" {
+variable "cross_domain" {
+  description = "Optional cross domain configuration"
+  default     = false
+  type        = bool
+}
+
+variable "domains" {
+  description = "Optional domains to cross domain and cookie domains"
+  default     = []
+  type        = list(string)
+}
+
+variable "fallback_cookie_domain" {
   description = "Optional first party cookie domain for the collector to set cookies on (e.g. acme.com)"
   default     = ""
   type        = string

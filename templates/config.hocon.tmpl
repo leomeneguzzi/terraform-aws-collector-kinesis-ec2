@@ -12,16 +12,16 @@ collector {
     CP = "NOI DSP COR NID PSA OUR IND COM NAV STA"
   }
   crossDomain {
-    enabled = false
-    domains = [ "*" ]
+    enabled = ${cross_domain}
+    domains = ${domains}
     secure = true
   }
   cookie {
     enabled = true
     expiration = "365 days"
     name = sp
-    domains = []
-    fallbackDomain = "${cookie_domain}"
+    domains = ${domains}
+    fallbackDomain = "${fallback_cookie_domain}"
     secure = true
     httpOnly = false
     sameSite = "None"
